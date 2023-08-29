@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="left">
+
+        <div id="title">
+            <h1>etch-a-sketch</h1>
+            <p>a virtual canvas with flexible settings</p>
+        </div>
+
+        <div id="settings">
+
+          <div id="buttons">
+            <button>Brush color</button>
+
+            <button>Canvas color</button>
+
+            <button>Erase</button>
+
+            <button>Delete</button>
+          </div>
+
+          <div id="slider">
+            <div>
+              <h3>canvas size</h3>
+              <h2 id="size"></h2>
+            </div>
+            <input type="range" min="2" max="128" value="64" />
+          </div>
+
+          <div id="toggles">
+            <div>
+              <h3>click mode</h3>
+              <label for="click-mode">
+                <input type="checkbox" />
+                <span class="toggle-switch"></span>
+              </label>
+            </div>
+
+            <div>
+              <h3>fullscreen</h3>
+              <label for="click-mode">
+                <input type="checkbox" />
+                <span class="toggle-switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div id="container">
+          <div id="canvas"></div>
+        </div>
+
+    </div>
+  </body>
+</html>

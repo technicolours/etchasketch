@@ -1,0 +1,115 @@
+* {
+font-family: 'JetBrains Mono', monospace;
+font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+color: #e8e8e8;
+}
+
+
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+input[type='range'] {
+    margin: 10px 0px;
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#main {
+    overflow: auto;
+    height: 100%;
+    height:inherit;
+    @include flex(row, space-between, center);
+    padding: 30px;
+    flex-wrap: wrap;
+
+    > div{
+
+    }
+    
+    background: #252525;
+    gap: 30px;
+
+}
+
+#left {
+    @include flex(row, center, center);
+    flex-shrink: 2;
+    flex-wrap: wrap;
+    height: inherit;
+    @include flex(column, space-between, flex-start);
+    min-width: 100px;
+    > div {
+        width: 100%;
+        //flex-shrink: 2;
+    }
+}
+
+#toggles > div {
+    @include flex(row, space-between, center);
+    margin: 10px 0px;
+}
+
+#settings > div {
+    margin: 25px 0px;
+    width: 100%;
+}
+
+#buttons {
+    @include flex(row, space-between, center);
+    
+    button {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+#container {
+    height: 600px;
+    width: 600px;
+    //flex-shrink: 1;
+    aspect-ratio: 1/1;
+   // @include flex(row, center, center);
+}
+
+#canvas {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background: #e8e8e8;
+    //display: grid;
+
+    div {
+        //display: inline-block;
+    }
+}
+
+#tile {
+    background-color: rgb(91, 91, 255);
+    border: 1px solid rgba(255, 0, 0, 0.263);
+    transition: background-color 0.1s ease-out;
+}
+
+#tile:hover {
+    background-color: #252525;
+}

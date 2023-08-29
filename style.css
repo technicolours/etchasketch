@@ -1,0 +1,103 @@
+* {
+  font-family: "JetBrains Mono", monospace;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #e8e8e8;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+input[type=range] {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#main {
+  overflow: auto;
+  height: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  flex-wrap: wrap;
+  background: #252525;
+  gap: 30px;
+}
+#left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 2;
+  flex-wrap: wrap;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 100px;
+}
+#left > div {
+  width: 100%;
+}
+
+#toggles > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+#settings > div {
+  margin: 25px 0px;
+  width: 100%;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#buttons button {
+  height: 40px;
+  width: 40px;
+}
+
+#container {
+  height: 600px;
+  width: 600px;
+  aspect-ratio: 1/1;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #e8e8e8;
+}
+#tile {
+  background-color: rgb(91, 91, 255);
+  border: 1px solid rgba(255, 0, 0, 0.263);
+  transition: background-color 0.1s ease-out;
+}
+
+#tile:hover {
+  background-color: #252525;
+}/*# sourceMappingURL=style.css.map */
