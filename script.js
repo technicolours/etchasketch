@@ -4,8 +4,6 @@ let brushColor = '252525';
 
 const canvas = document.getElementById('canvas');
 
-//const colorInput = document.querySelector('')
-
 for (let i=amount; i>0; i--) {
     const tile = document.createElement('div');
     tile.setAttribute('id', 'tile');
@@ -16,33 +14,22 @@ for (let i=amount; i>0; i--) {
 
 const tiles = document.querySelectorAll('#tile');
 
-function paint(target) {
+function paint(evt) {
     console.log('on tile');
-    console.log(target);
-    this.style.backgroundColor = (`#${brushColor}`);
+    evt.target.style.backgroundColor = (`#${brushColor}`);
 }
 
-//tiles.forEach(el => el.addEventListener('click', paint));
-
 function mouseDown (event) {
-    const tar = event.target;
-    console.log(tar);
-    paint(tar);
+    paint(event);
     tiles.forEach(el => el.addEventListener('mouseover', paint));
     console.log('mouse down');
 }
 
+// const mouseDown2 = (event) => {
+    
+// }
+
 tiles.forEach(el => el.addEventListener('mousedown', mouseDown));
-
-//tiles.forEach(el => el.addEventListener('click', paint));
-
-// OLD VERSION
-// tiles.forEach(el => el.addEventListener('mousedown', () => {
-//     paint();
-//     tiles.forEach(el => el.addEventListener('mouseover', paint));
-//     console.log('mouse down');
-//     })
-// )
 
 
 document.addEventListener('mouseup', () => {
