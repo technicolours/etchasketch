@@ -26,13 +26,22 @@
         <div id="settings">
 
           <div id="buttons">
-            <input type="color" id="brush">
+            <label class="color"><input type="color" id="brush-color" value="#000000"></label>
 
-            <input type="color" id="background">
+            <label class="color"><input type="color" id="canvas-color" value="#ffffff"></label>
+            
+            <input type="checkbox"  id="erase">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path fill="currentColor" d="M690-240h190v80H610l80-80Zm-500
+                80-85-85q-23-23-23.5-57t22.5-58l440-456q23-24 56.5-24t56.5 23l199 199q23 23 23 57t-23
+                57L520-160H190Zm296-80 314-322-198-198-442 456 64 64h262Zm-6-240Z"/></svg>
+            </input>
 
-            <button>Erase</button>
-
-            <button>Delete</button>
+            <button><svg id="clear" height="24" viewBox="0 -960 960 960" width="24">
+              <path fill="currentColor" d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0
+              33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160
+              0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+            </button>
           </div>
 
           <div id="slider">
@@ -40,7 +49,7 @@
               <h3>canvas size</h3>
               <h2 id="size"></h2>
             </div>
-            <input type="range" min="2" max="128" value="64" />
+            <input type="range" min="2" max="32" value="16" />
           </div>
 
           <div id="toggles">
