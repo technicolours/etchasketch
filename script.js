@@ -10,12 +10,16 @@ const clearButton = document.getElementById('clear');
 const eraseButton = document.getElementById('erase');
 const brushColorPicker = document.getElementById('brush-color');
 const canvasColorPicker = document.getElementById('canvas-color');
+const sizeDisplay = document.getElementById('size');
+const clickToggle = document.querySelector("label[for='click-mode'] input");
 
 console.log(stylesheet);
 
 const newCanvas = () => {
 
     size = slider.value;
+
+    sizeDisplay.innerHTML = `${size}x${size}`
 
     removeChildren();
 
@@ -67,8 +71,13 @@ setCanvasColor(canvasColorPicker.value, '.tile');
 
 
 function paint(evt) {
-    console.log('on tile');
-    evt.target.style.backgroundColor = (brushColor);
+
+    if (!eraseButton.checked) {
+        evt.target.style.backgroundColor = (brushColor);
+    } else {
+        evt.target.style.removeProperty('background-color');
+    }
+    
 }
 
 function mouseDown (event) {
@@ -83,8 +92,6 @@ document.addEventListener('mouseup', () => {
     console.log("mouseup");
     })
 
-//const colorPicker = querySelectorAll("input[type='color']");
-
 clearButton.addEventListener('click', newCanvas);
 slider.addEventListener('change', newCanvas);
 
@@ -95,12 +102,16 @@ canvasColorPicker.addEventListener('change', () => {
 })
 
 eraseButton.addEventListener('change', () => {
-    console.log(eraseButton.checked);
+    console.log(eraseButton.checked); 
+})
 
-    if (eraseButton.checked) {
+clickToggle.addEventListener('change', () => {
+
+    if (clickToggle.checked) {
         tiles.forEach(el => el.removeEventListener('mousedown', mouseDown));
-    } else if (!eraseButton.checked) {
+        tiles.forEach(el => el.addEventListener('click', paint));
+    } else {
+        tiles.forEach(el => el.removeEventListener('click', paint));
         tiles.forEach(el => el.addEventListener('mousedown', mouseDown));
     }
-    
 })
