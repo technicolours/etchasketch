@@ -1,12 +1,15 @@
 $text-color: #e8e8e8;
+$secondary: #717171;
+$active: #4c4c4c;
+$primary: #252525;
 
 * {
-font-family: 'JetBrains Mono', monospace;
-font-family: 'Montserrat', sans-serif;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-//color: #e8e8e8;
+    font-family: "JetBrains Mono", monospace;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //color: #e8e8e8;
 }
 
 @mixin flex($direction, $justify, $align) {
@@ -30,7 +33,7 @@ p {
     color: $text-color;
 }
 
-input[type='range'] {
+input[type="range"] {
     margin: 10px 0px;
     width: 100%;
 }
@@ -46,18 +49,16 @@ body {
 #main {
     overflow: auto;
     height: 100%;
-    height:inherit;
+    height: inherit;
     @include flex(row, space-between, center);
     padding: 30px;
     flex-wrap: wrap;
 
-    > div{
-
+    > div {
     }
-    
-    background: #252525;
-    gap: 30px;
 
+    background: $primary;
+    gap: 30px;
 }
 
 #left {
@@ -76,6 +77,64 @@ body {
 #toggles > div {
     @include flex(row, space-between, center);
     margin: 10px 0px;
+
+    label {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 24px;
+        background: $secondary;
+        //padding: 4px 2px;
+        transition: all 0.1s ease-out 0ms;
+        border-radius: 1px;
+    }
+
+    label::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 4px;
+        left: 4px;
+        //aspect-ratio: 1/1;
+        background-color: $text-color;
+        transition: all 0.1s ease-out 0ms;
+        border-radius: inherit;
+    }
+
+    input:checked + label{
+        background: $active;
+
+        &:hover {
+            background: #555555;
+        }
+
+        &::after {
+            left: 30px;
+        }
+    }
+
+    input:hover + label{
+       // background: $active;
+        background: #828282;
+        &::after {
+            scale: 1.05;
+        }
+    }
+
+}
+
+
+input[type="checkbox"]{
+    display: none;
+
+    & + label {
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
 
 #settings > div {
@@ -99,14 +158,13 @@ body {
         color: $text-color;
 
         svg {
-            width:100%;
+            width: 100%;
             height: 100%;
         }
     }
 }
 
 #slider {
-
     div {
         @include flex(row, space-between, center);
     }
@@ -156,7 +214,8 @@ body {
 //     }
 // }
 
-button, .color {
+button,
+.color {
     transition: 0.1s ease-out 0ms;
     cursor: pointer;
     color: $text-color;
@@ -167,7 +226,6 @@ button, .color {
     background: none;
     cursor: pointer;
     color: $text-color;
-    
 
     &:hover {
         transform: scale(1.05);
@@ -180,7 +238,6 @@ button, .color {
     svg {
         width: 100%;
         height: 100%;
-
     }
 }
 
