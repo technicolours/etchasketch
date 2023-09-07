@@ -74,19 +74,20 @@ body {
 #toggles > div label {
   display: inline-block;
   position: relative;
-  width: 50px;
+  width: 48px;
   height: 24px;
-  background: #717171;
+  background: #797979;
   transition: all 0.1s ease-out 0ms;
   border-radius: 1px;
+  cursor: pointer;
 }
 #toggles > div label::after {
   content: "";
   position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 4px;
-  left: 4px;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 3px;
   background-color: #e8e8e8;
   transition: all 0.1s ease-out 0ms;
   border-radius: inherit;
@@ -98,13 +99,19 @@ body {
   background: #555555;
 }
 #toggles > div input:checked + label::after {
-  left: 30px;
+  left: 27px;
 }
 #toggles > div input:hover + label {
   background: #828282;
 }
 #toggles > div input:hover + label::after {
   scale: 1.05;
+}
+#toggles > div input:active + label {
+  background: #828282;
+}
+#toggles > div input:active + label::after {
+  scale: 0.95;
 }
 
 input[type=checkbox] {

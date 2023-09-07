@@ -65,7 +65,7 @@ const setCanvasColor = (color, element) => {
     tileRGB = tileStyle.style.backgroundColor;
     //changeHoverHSL(tileRGB);
     
-   // tileStyle.style.setProperty = ('background-color', `#${color}`);
+    tileStyle.style.setProperty = ('background-color', `#${color}`);
 
 }
 

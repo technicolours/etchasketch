@@ -1,5 +1,5 @@
 $text-color: #e8e8e8;
-$secondary: #717171;
+$secondary: #797979;
 $active: #4c4c4c;
 $primary: #252525;
 
@@ -81,21 +81,22 @@ body {
     label {
         display: inline-block;
         position: relative;
-        width: 50px;
+        width: 48px;
         height: 24px;
         background: $secondary;
         //padding: 4px 2px;
         transition: all 0.1s ease-out 0ms;
         border-radius: 1px;
+        cursor: pointer;
     }
 
     label::after {
         content: "";
         position: absolute;
-        width: 16px;
-        height: 16px;
-        top: 4px;
-        left: 4px;
+        width: 18px;
+        height: 18px;
+        top: 3px;
+        left: 3px;
         //aspect-ratio: 1/1;
         background-color: $text-color;
         transition: all 0.1s ease-out 0ms;
@@ -110,17 +111,28 @@ body {
         }
 
         &::after {
-            left: 30px;
+            left: 27px;
+            //scale: 1.2;
         }
     }
 
     input:hover + label{
        // background: $active;
         background: #828282;
+
         &::after {
             scale: 1.05;
         }
     }
+
+    input:active + label{
+        // background: $active;
+         background: #828282;
+ 
+         &::after {
+             scale: 0.95;
+         }
+     }
 
 }
 
@@ -229,6 +241,7 @@ button,
 
     &:hover {
         transform: scale(1.05);
+        
     }
 
     &:active {
