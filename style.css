@@ -38,32 +38,24 @@ body {
   height: 100%;
   height: inherit;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 30px;
-  flex-wrap: wrap;
   background: #252525;
   gap: 30px;
 }
+#header {
+  width: 100vw;
+}
+
 #left {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 2;
-  flex-wrap: wrap;
-  height: inherit;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: space-between;
   min-width: 100px;
 }
-#left > div {
-  width: 100%;
-}
-
 #toggles > div {
   display: flex;
   flex-direction: row;
