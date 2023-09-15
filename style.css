@@ -23,7 +23,8 @@ p {
 input[type=range] {
   margin: 10px 0px;
   width: 100%;
-  padding: 0px 3px 0px 3px;
+  padding: 0px 4px 0px 4px;
+  cursor: pointer;
 }
 
 html {
@@ -42,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 30px;
+  padding: 30px 50px;
   background: #252525;
   gap: 30px;
 }
@@ -129,8 +130,8 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   -webkit-appearance: none;
   background: #e8e8e8;
-  height: 18px;
-  top: 3px;
+  height: 16px;
+  top: 4px;
   aspect-ratio: 1/1;
   box-shadow: 0px 0px 1px rgb(95, 95, 95);
   -webkit-transition: all 0.1s ease-out 0ms;
@@ -159,7 +160,7 @@ input[type=range]::-webkit-slider-runnable-track {
   flex-grow: 1;
   gap: 10px;
   min-width: 250px;
-  max-width: 500px;
+  max-width: 400px;
 }
 #settings > div {
   width: 100%;
@@ -286,4 +287,31 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 .color:focus {
   transform: scale(1.1);
+}
+
+@media screen and (min-width: 1920px) {
+  #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #main > div {
+    width: 1820px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #main {
+    padding: 30px 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  #content {
+    justify-content: center;
+  }
+  #main {
+    align-items: center;
+  }
+  #header {
+    max-width: 400px;
+  }
 }/*# sourceMappingURL=style.css.map */
