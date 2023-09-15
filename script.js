@@ -36,7 +36,12 @@ const newCanvas = () => {
     }
 
     tiles = document.querySelectorAll('.tile');
-    tiles.forEach(el => el.addEventListener('mousedown', mouseDown));
+
+    if (clickToggle.checked) {
+        tiles.forEach(el => el.addEventListener('click', paint));
+    } else {
+        tiles.forEach(el => el.addEventListener('mousedown', mouseDown));
+    }
 }
 
 const removeChildren = () => {
